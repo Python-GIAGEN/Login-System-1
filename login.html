@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login – Lorenz Opera</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
+<div class="center-wrapper">
+    <div class="panel">
+        <h1>Login</h1>
+
+        <form id="loginForm">
+            <input id="email" type="email" placeholder="E-Mail Adresse">
+            <input id="password" type="password" placeholder="Passwort">
+            <button type="submit">Anmelden</button>
+        </form>
+
+        <button id="googleLogin" class="google-btn">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
+            Mit Google anmelden
+        </button>
+
+        <a class="link" href="/forgot-password.html">Passwort vergessen?</a>
+        <a class="link" href="/register.html">Noch keinen Account?</a>
+    </div>
+</div>
+
+<script type="module" src="/js/login.js"></script>
+</body>
+</html>
