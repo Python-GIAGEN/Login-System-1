@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard – Lorenz Opera</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
+<div class="center-wrapper">
+    <div class="panel">
+        <h1>Willkommen</h1>
+        <p>Du bist eingeloggt.</p>
+
+        <a class="link" href="/settings.html">Account Einstellungen</a>
+        <button id="logoutBtn">Abmelden</button>
+    </div>
+</div>
+
+<script type="module" src="/js/auth-guard.js"></script>
+<script type="module">
+import { auth } from "/js/firebase-init.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+document.getElementById("logoutBtn").onclick = () => {
+    signOut(auth).then(() => {
+        window.location.href = "/login.html";
+    });
+};
+</script>
+</body>
+</html>
