@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Einstellungen – Lorenz Opera</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
+<div class="center-wrapper">
+    <div class="panel">
+        <h1>Account Einstellungen</h1>
+
+        <form id="changeEmailForm">
+            <input id="newEmail" type="email" placeholder="Neue E-Mail">
+            <button type="submit">E-Mail ändern</button>
+        </form>
+
+        <form id="changePwForm">
+            <input id="oldPw" type="password" placeholder="Altes Passwort">
+            <input id="newPw" type="password" placeholder="Neues Passwort">
+            <input id="newPw2" type="password" placeholder="Neues Passwort bestätigen">
+            <button type="submit">Passwort ändern</button>
+        </form>
+
+        <a class="link" href="/dashboard.html">Zurück</a>
+    </div>
+</div>
+
+<script type="module" src="/js/auth-guard.js"></script>
+<script type="module" src="/js/settings.js"></script>
+</body>
+</html>
