@@ -11,11 +11,13 @@
     <div class="panel">
         <h1>Account Einstellungen</h1>
 
+        <!-- E-Mail ändern -->
         <form id="changeEmailForm">
             <input id="newEmail" type="email" placeholder="Neue E-Mail">
             <button type="submit">E-Mail ändern</button>
         </form>
 
+        <!-- Passwort ändern -->
         <form id="changePwForm">
             <input id="oldPw" type="password" placeholder="Altes Passwort">
             <input id="newPw" type="password" placeholder="Neues Passwort">
@@ -23,11 +25,40 @@
             <button type="submit">Passwort ändern</button>
         </form>
 
+        <hr style="margin-top: 30px; opacity: 0.2;">
+
+        <!-- 2FA Bereich -->
+        <h2 style="text-align:center;">2‑Faktor‑Authentifizierung</h2>
+
+        <form id="enable2FAForm">
+            <button type="submit">2FA (Authenticator App) aktivieren</button>
+        </form>
+
+        <div id="totpSetup" style="display:none; margin-top: 20px;">
+            <p>Scanne diesen QR‑Code mit deiner Authenticator‑App:</p>
+            <canvas id="qrCanvas"></canvas>
+
+            <p>Oder manueller Geheimschlüssel:</p>
+            <code id="manualSecret" style="display:block; text-align:center;"></code>
+
+            <input id="totpCode" type="text" placeholder="6‑stelliger Code aus der App">
+            <button id="confirmTotpBtn">Code bestätigen</button>
+        </div>
+
+        <div id="backupSection" style="display:none; margin-top: 20px;">
+            <h3>Backup‑Codes</h3>
+            <p>Diese Codes kannst du verwenden, wenn du keinen Zugriff auf deine 2FA‑App hast.</p>
+            <ul id="backupList"></ul>
+            <button id="regenBackupBtn">Neue Backup‑Codes erstellen</button>
+        </div>
+
         <a class="link" href="/dashboard.html">Zurück</a>
     </div>
 </div>
 
 <script type="module" src="/js/auth-guard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/otplib@12.0.1/bundle/otplib-browser.js"></script>
 <script type="module" src="/js/settings.js"></script>
 </body>
 </html>
