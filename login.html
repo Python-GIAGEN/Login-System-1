@@ -24,6 +24,23 @@
 
         <a class="link" href="/forgot-password.html">Passwort vergessen?</a>
         <a class="link" href="/register.html">Noch keinen Account?</a>
+
+        <div id="twoFASection" style="display:none; margin-top: 20px;">
+            <h3>2‑Faktor‑Authentifizierung</h3>
+            <p>Wähle eine Methode:</p>
+            <button id="useTotpBtn">Authenticator‑Code</button>
+            <button id="useBackupBtn">Backup‑Code</button>
+
+            <div id="totpInput" style="display:none; margin-top: 10px;">
+                <input id="totpLoginCode" type="text" placeholder="6‑stelliger Authenticator‑Code">
+                <button id="confirmTotpLoginBtn">Bestätigen</button>
+            </div>
+
+            <div id="backupInput" style="display:none; margin-top: 10px;">
+                <input id="backupLoginCode" type="text" placeholder="Backup‑Code">
+                <button id="confirmBackupLoginBtn">Bestätigen</button>
+            </div>
+        </div>
     </div>
 </div>
 
